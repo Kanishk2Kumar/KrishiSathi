@@ -75,12 +75,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Access Denied</AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogDescription className="text-red-500">
               {alertMessage}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogAction onClick={handleAlertClose}>OK</AlertDialogAction>
+            <AlertDialogAction onClick={handleAlertClose} className=" bg-red-600 hover:bg-red-700">OK</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
