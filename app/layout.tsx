@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ReactNode } from "react";
+import { UserProvider } from "@/context/UserContext";
 
 // Bebas Neue Font Configuration
 const bebasNeue = localFont({
@@ -28,11 +29,13 @@ export const metadata: Metadata = {
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" suppressHydrationWarning>
+      <UserProvider>
         <body
           className={`${bebasNeue.variable} ${cormorantGaramond.variable} antialiased`}
         >
             {children}
         </body>
+      </UserProvider>
     </html>
   );
 };

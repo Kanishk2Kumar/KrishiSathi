@@ -5,28 +5,28 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useState, useEffect } from "react";
-// import { supabase } from "../lib/utils/client";
+import { supabase } from "../lib/utils/client";
 
 const Header = () => {
   const [user, setUser] = useState<any>(null); // Store the user object
   const [isSignedIn, setIsSignedIn] = useState(false);
 
-  // // Fetch the user session
-  // useEffect(() => {
-  //   const fetchSession = async () => {
-  //     const {
-  //       data: { session },
-  //     } = await supabase.auth.getSession();
-  //     if (session) {
-  //       setUser(session.user);
-  //       setIsSignedIn(true);
-  //     } else {
-  //       setIsSignedIn(false);
-  //     }
-  //   };
+  // Fetch the user session
+  useEffect(() => {
+    const fetchSession = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session) {
+        setUser(session.user);
+        setIsSignedIn(true);
+      } else {
+        setIsSignedIn(false);
+      }
+    };
 
-  //   fetchSession();
-  // }, []);
+    fetchSession();
+  }, []);
 
   // Get the first letter of the user's username or email
   const getInitial = () => {
