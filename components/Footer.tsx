@@ -14,9 +14,9 @@ const footerLinks = [
   {
     title: "Get Involved",
     links: [
-      { name: "Donate", link: "/donate" },
-      { name: "Partner with Us", link: "/partnerships" },
-      { name: "Volunteer", link: "/volunteer" },
+      { name: "All Schemes", link: "/all-schemes" },
+      { name: "IOT Stations", link: "/order" },
+      { name: "Benifits", link: "/tax-benifits" },
     ],
   },
 ];

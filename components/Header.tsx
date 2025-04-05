@@ -46,13 +46,13 @@ const Header = () => {
         </Link>
         <ul className="flex flex-row items-center gap-4">
           <li className="relative group">
-            <Link href="/all-campaigns">
+            <Link href="/all-schemes">
             <button className="text-base cursor-pointer capitalize text-gray-500">
-              All Campaigns
+              All Schemes
             </button>
             </Link>
           </li>
-          <li className="relative group">
+          {/* <li className="relative group">
             <button className="text-base cursor-pointer capitalize text-gray-500">
               My Campaigns
             </button>
@@ -64,11 +64,11 @@ const Header = () => {
                 <Link href="/my-campaigns">Open Requests</Link>
               </li>
             </ul>
-          </li>
+          </li> */}
           <li className="relative group">
-          <Link href="/impact-score">
+          <Link href="/order">
             <button className="text-base cursor-pointer capitalize text-gray-500">
-              Impact Score
+              Order Smart-IOT Station
             </button>
           </Link>
           </li><li className="relative group">
