@@ -17,14 +17,17 @@ import {
 } from "@/components/ui/sidebar"
 import Image from "next/image"
 import Link from "next/link"
+import { supabase } from "../lib/utils/client"
+import { useState, useEffect } from "react"
 
-const data = {
-  user: {
-    name: "Kanishk Kumar",
-    email: "kanishkkumar127@gmail.com",
-    avatar: "/images/Kanishk.jpg",
-  },
-  actions: [
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    avatar: "/images/default-avatar.png", // default fallback avatar
+  });
+
+  const actions = [
     {
       name: "Update Government Schemes",
       url: "/admin/government-schemes",
@@ -40,22 +43,46 @@ const data = {
       url: "#",
       icon: IconFileWord,
     },
-  ],
-}
+  ]
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  useEffect(() => {
+    const fetchUser = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession()
+
+      if (session?.user) {
+        const { data, error } = await supabase
+          .from("user")
+          .select("*")
+          .eq("userid", session.user.id)
+          .single()
+
+        if (!error && data) {
+          setUserData({
+            name: data.name,
+            email: data.email,
+            avatar: "/images/Kanishk.jpg", // Optional: use dynamic avatar from db if you add that
+          })
+        }
+      }
+    }
+
+    fetchUser()
+  }, [])
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <Link href="/admin">
-        <Image src="/images/Logo1.png" alt="Logo" width={132} height={32} />
+          <Image src="/images/Logo1.png" alt="Logo" width={132} height={32} />
         </Link>
       </SidebarHeader>
       <SidebarContent>
-        <NavDocuments items={data.actions} />
+        <NavDocuments items={actions} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={userData} />
       </SidebarFooter>
     </Sidebar>
   )
