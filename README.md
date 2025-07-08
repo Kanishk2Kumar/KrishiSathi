@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌾 KrishiSathi – Empowering Farmers with AI & IoT
 
-## Getting Started
+**KrishiSathi** is a smart farming assistant that leverages **AI**, **IoT**, and **ML** to help farmers make informed decisions. It offers early disease detection, real-time soil monitoring, personalized fertilizer recommendations, government scheme alerts, and more — all in one multilingual mobile app.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📐 Project Flowchart
+![KrishiSathi-Flow (1)](https://github.com/user-attachments/assets/c84afbbe-eb95-4d1f-8d34-abb4c5e16ebd)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Screenshot 2025-05-21 192619](https://github.com/user-attachments/assets/723fb00e-b1f7-45ff-ac7d-93ca0c19f4e8)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 The Problem
 
-## Learn More
+Agriculture is the backbone of India's economy, yet farmers face major challenges:
 
-To learn more about Next.js, take a look at the following resources:
+- ❌ Poor soil insights → inefficient crop planning  
+- 🌦️ Climate unpredictability & diseases → lower yields  
+- 📉 Lack of real-time data & monitoring → reactive farming  
+- 💸 Limited access to markets & subsidies → financial instability  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💡 Our Solution: KrishiSathi
 
-## Deploy on Vercel
+An all-in-one mobile platform addressing key farmer pain points through:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🧠 **AI-Powered Early Disease Detection**: Identifies crop diseases early with ML models and suggests remedies.
+- 🌐 **Real-Time Soil Monitoring**: IoT sensors measure soil parameters like moisture, temperature, humidity, and NPK levels.
+- 📲 **Multilingual AI Assistant**: Voice-based assistant gives advice on soil, weather, and crop strategies in local languages.
+- 📢 **Government Scheme Alerts**: Personalized SMS/app notifications on relevant subsidies and policies.
+- 🧪 **NPK-Based Fertilizer Recommendation**: Suggests type & quantity of fertilizers with purchase links.
+- 💧 **Smart Irrigation**: Weather-integrated watering alerts optimize resource usage.
+- 🛒 **Farmer-to-Market Platform**: Farmers can sell directly to consumers and vendors.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🛠️ Tech Stack
+
+![image](https://github.com/user-attachments/assets/bda42f2d-264c-4f5d-90bc-3399b7851d83)
+
+### 🔧 IoT Hardware
+- **ESP32**: Microcontroller for Wi-Fi communication
+- **Sensors**:
+  - DHT11 – Temperature & Humidity
+  - TDR – Soil Moisture
+  - SEN0161 – Soil pH
+  - NPK Sensor – Nitrogen, Phosphorus, Potassium levels
+- **Solar Power** (Optional low-power station)
+
+## 📊 NPK Monitoring & Fertilizer Suggestion Flow
+
+1. **NPK Data Capture**: Real-time values via NPK sensor + ESP32  
+2. **Crop Selection**: User selects crop in app  
+3. **Ideal vs Actual Comparison**: System calculates deficiency  
+4. **Fertilizer Suggestion**: Recommends exact amount (kg/acre)  
+5. **Purchase Integration**: Links to trusted e-commerce sites
+
+---
+
+## 📱 App Features at a Glance
+
+| Feature                             | Description                                                  |
+|-------------------------------------|------------------------------------------------------------- |
+| 🌾 Disease Detection                | AI spots early-stage crop diseases                          |
+| 💧 Smart Irrigation Alerts         | Prevents overwatering/drought stress                         |
+| 📡 Real-Time Monitoring            | IoT sensors track soil & crop health                         |
+| 🗺️ Voice-based Farming Assistant   | Multilingual help on soil, weather & crop care               |
+| 📲 Scheme & Subsidy Alerts         | SMS/app notifications on govt. benefits                      |
+| 🛒 Direct Market Access            | Farmers connect directly with buyers, no middlemen           |
+| 📈 Fertilizer Calculator           | Shows exact fertilizer need based on soil & crop data        
+
+
