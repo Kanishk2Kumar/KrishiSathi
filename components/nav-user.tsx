@@ -5,6 +5,8 @@ import {
   IconLogout,
   IconUserCircle,
 } from "@tabler/icons-react"
+import { supabase } from "@/lib/utils/client"
+import { useRouter } from "next/navigation"
 
 import {
   Avatar,
@@ -37,6 +39,16 @@ export function NavUser({
   }
 }) {
   const { isMobile } = useSidebar()
+  const router = useRouter()
+
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut()
+      router.push('/sign-in')
+    } catch (error) {
+      console.error('Error logging out:', error)
+    }
+  }
 
   return (
     <SidebarMenu>
@@ -88,7 +100,7 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-red-500">
+            <DropdownMenuItem className="text-red-500" onClick={handleLogout}>
               <IconLogout />
               Log out
             </DropdownMenuItem>

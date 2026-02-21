@@ -40,7 +40,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     },
     {
       name: "Will be Adding",
-      url: "#",
+      url: "/admin/VillageO",
       icon: IconFileWord,
     },
   ]
